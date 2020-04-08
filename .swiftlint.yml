@@ -1,0 +1,14 @@
+# excluded folders
+excluded:
+  - .build
+  - .git
+  - Carthage
+  - Pods
+  - Tests/LinuxMain.swift
+  - Tests/**/XCTestManifests.swift
+
+# rule on/off switching
+disabled_rules:
+  - todo
+
+# TODO: enable additional rules
