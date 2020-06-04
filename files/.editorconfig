@@ -2,7 +2,7 @@ root = true
 
 ### UNIVERSAL RULES ###
 
-# General
+# General default settings
 [*]
 charset = utf-8
 end_of_line = lf
@@ -13,7 +13,8 @@ trim_trailing_whitespace = true
 # max_line_length - probably better to leave to language specific tools
 
 # Ignore binaries
-[{*.{so,pdb,dylib,dll,cache,a},*.{zip,7z,gz,xz}}]
+# TODO: maybe this is not necessary, check if eclint ignores binaries by default
+[{*.{so,pdb,dylib,dll,cache,a},*.{zip,7z,gz,xz},*.{jpg,jpeg,png,gif}}]
 charset = unset
 end_of_line = unset
 indent_size = unset
@@ -21,7 +22,7 @@ indent_style = unset
 insert_final_newline = unset
 trim_trailing_whitespace = unset
 
-# files to keep directories in git, must be totally empty
+# files to keep directories in version systems, usually empty
 [{.{keep,empty},.{git,hg}{keep,empty}}]
 insert_final_newline = false
 
@@ -30,7 +31,7 @@ insert_final_newline = false
 indent_style = tab
 
 # Trailing whitespace is generally permitted in markdown
-# But it is rarely used and can introduce unwanted whitespace if enabled
+# But it is rarely used by me, and I prefer trimming such whitespace regardless
 # [*.md]
 # trim_trailing_whitespace = false
 
@@ -39,7 +40,7 @@ indent_style = tab
 indent_size = 2
 
 # C-style languages multiline comments
-[{*.{c,h,m,cpp,hpp,mpp,cc,hh,mm,C,H,M,cxx,hxx,mxx,c++,h++,m++},*.swift,*.{js,jsx,ts,tsx},*.{php,php3,php4,php5,php7},*.{java,scala,sc,kt,ktm,kts},*.{cs,csx,fs,fsx}}]
+[{*.{c,h,m,cpp,hpp,cc,hh,mm,C,H,M,cxx,hxx,c++,h++},*.swift,*.{js,jsx,ts,tsx},*.{php,php5,php7},*.{java,scala,sc,kt,ktm,kts},*.{cs,csx,fs,fsx}}]
 block_comment = *
 block_comment_end = */
 block_comment_start = /*
