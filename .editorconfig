@@ -23,11 +23,11 @@ insert_final_newline = unset
 trim_trailing_whitespace = unset
 
 # files to keep directories in version systems, usually empty
-[{.{keep,empty},.{git,hg}{keep,empty}}]
+[{.{,git,hg}{keep,empty}}]
 insert_final_newline = false
 
 # Makefiles must be indented using tabs
-[{Makefile,{GNU,BSD}Makefile,*.make}]
+[{{,GNU,BSD}Makefile,*.make,{,Root}Makeppfile}]
 indent_style = tab
 
 # Trailing whitespace is generally permitted in markdown
