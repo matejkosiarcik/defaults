@@ -40,7 +40,7 @@ indent_style = tab
 indent_size = 2
 
 # All jsons
-[*.{json,remarkrc,htmllintrc,htmlhintrc,eslintrc,babelrc}]
+[*.{json,json5,remarkrc,htmllintrc,htmlhintrc,eslintrc,babelrc}]
 indent_size = 2
 
 # C-style languages multiline comments
