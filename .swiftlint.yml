@@ -2,10 +2,12 @@
 excluded:
   - .build
   - .git
+  - .hg
+  - build
   - Carthage
   - Pods
-  - Tests/LinuxMain.swift
   - Tests/**/XCTestManifests.swift
+  - Tests/LinuxMain.swift
 
 # TODO: validate rules on swift project
 
