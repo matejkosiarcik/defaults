@@ -45,7 +45,7 @@ block_comment = *
 block_comment_end = */
 block_comment_start = /*
 
-### Apple  ecosystem ###
+### Apple ecosystem ###
 
 [{Fastfile,{Podfile,Cartfile}{,.resolved}}]
 indent_size = 2
