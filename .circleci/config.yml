@@ -1,0 +1,25 @@
+version: 2.1
+
+workflows:
+  version: 2
+  circleci-build:
+    jobs:
+      - azlint
+      - lint
+
+jobs:
+  azlint:
+    docker:
+      - image: matejkosiarcik/azlint
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: azlint
+
+  lint:
+    docker:
+      - image: node:lts
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run lint
