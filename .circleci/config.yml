@@ -18,11 +18,8 @@ jobs:
 
   lint:
     docker:
-      - image: debian:stable
+      - image: node:lts
     steps:
       - checkout
-      - run: |
-          apt-get update
-          DEBIAN_FRONTEND=noninteractive apt-get install --yes --no-install-recommends build-essential curl ruby ruby-dev zlib1g zlib1g-dev
-          curl -sL https://deb.nodesource.com/setup_lts.x | bash - && apt-get install --yes --no-install-recommends nodejs
-      - run: make bootstrap lint
+      - run: npm ci
+      - run: npm run lint
