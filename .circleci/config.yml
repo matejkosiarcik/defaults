@@ -5,7 +5,6 @@ workflows:
   circleci-build:
     jobs:
       - azlint
-      - lint
 
 jobs:
   azlint:
@@ -14,11 +13,3 @@ jobs:
     steps:
       - checkout
       - run: azlint
-
-  lint:
-    docker:
-      - image: node:lts
-    steps:
-      - checkout
-      - run: npm ci
-      - run: npm run lint
