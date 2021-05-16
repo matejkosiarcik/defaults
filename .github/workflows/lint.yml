@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0 # Full git history is needed to get a proper list of changed files
 
       - name: GitHub Super Linter
-        uses: github/super-linter@v3.16.1
+        uses: github/super-linter@v3.17.1
         env:
           # global settings
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -24,19 +24,23 @@ jobs:
           DEFAULT_BRANCH: master
           LINTER_RULES_PATH: /
 
-          # CSS is linted separately
+          # disable
           VALIDATE_CSS: false
-          YAML_CONFIG_FILE: .yamllint.yml
-
-          # JS is linted separately
           VALIDATE_JAVASCRIPT_ES: false
           VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_JSCPD: false # TODO: reenable JSCPD
           VALIDATE_TYPESCRIPT_ES: false
           VALIDATE_TYPESCRIPT_STANDARD: false
 
-          # misc
+          # config files
+          DOCKERFILE_HADOLINT_FILE_NAME: .hadolint.yaml
+          MARKDOWN_CONFIG_FILE: .markdownlint.json
+          PYTHON_BLACK_CONFIG_FILE: pyproject.toml
+          PYTHON_FLAKE8_CONFIG_FILE: setup.cfg
+          PYTHON_ISORT_CONFIG_FILE: pyproject.toml
+          PYTHON_PYLINT_CONFIG_FILE: pyproject.toml
           RUBY_CONFIG_FILE: .rubocop.yml
-          VALIDATE_JSCPD: false # TODO: reenable JSCPD
+          YAML_CONFIG_FILE: .yamllint.yml
 
   mega-linter:
     name: Mega-Linter
@@ -48,10 +52,11 @@ jobs:
           fetch-depth: 0 # Full git history is needed to get a proper list of changed files
 
       - name: Mega Linter
-        uses: nvuillam/mega-linter@v4.33.0
+        uses: nvuillam/mega-linter@v4.34.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
           DEFAULT_BRANCH: master
           LINTER_RULES_PATH: /
+          JSON_V8R_FILTER_REGEX_EXCLUDE: composer.json
           # Rest of the config is in /.mega-linter.yml
