@@ -1,2 +1,3 @@
 # .github/workflows/lint.yml
 .github/toc.yml
+.mergify/config.yml
