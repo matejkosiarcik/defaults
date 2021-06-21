@@ -9,8 +9,6 @@ excluded:
   - Tests/**/XCTestManifests.swift
   - Tests/LinuxMain.swift
 
-# TODO: validate rules on swift project
-
 # rule on/off switching
 disabled_rules:
   - todo
