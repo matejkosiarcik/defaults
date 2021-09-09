@@ -12,4 +12,9 @@ jobs:
       - image: matejkosiarcik/azlint
     steps:
       - checkout
-      - run: azlint
+      - run: |
+          if [ "$CIRCLE_BRANCH" = master ]; then
+            azlint
+          else
+            azlint --only-changed
+          fi
