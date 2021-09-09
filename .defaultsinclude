@@ -1,3 +1,4 @@
-# .github/workflows/lint.yml
 .github/toc.yml
+.github/workflows/dependabot-auto-merge.yml
+# .github/workflows/lint.yml
 .mergify/config.yml
