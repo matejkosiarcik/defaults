@@ -1,4 +1,5 @@
 .github/toc.yml
 .github/workflows/dependabot-auto-merge.yml
+.github/workflows/mega-linter.yml
 # .github/workflows/lint.yml
 .mergify/config.yml
