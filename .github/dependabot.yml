@@ -13,16 +13,3 @@ updates:
     assignees:
       - matejkosiarcik
     open-pull-requests-limit: 1
-
-  - package-ecosystem: npm
-    directory: "/"
-    versioning-strategy: increase
-    schedule:
-      interval: daily
-      time: "00:30"
-      timezone: "Europe/Bratislava"
-    reviewers:
-      - matejkosiarcik
-    assignees:
-      - matejkosiarcik
-    open-pull-requests-limit: 1
