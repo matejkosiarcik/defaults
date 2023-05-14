@@ -3,6 +3,8 @@ name: Lint
 on:
   pull_request:
 
+permissions: read-all
+
 jobs:
   mega-linter:
     name: Mega-Linter

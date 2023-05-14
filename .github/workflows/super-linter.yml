@@ -3,6 +3,8 @@ name: Lint
 on:
   pull_request:
 
+permissions: read-all
+
 jobs:
   super-linter:
     name: GitHub Super Linter
