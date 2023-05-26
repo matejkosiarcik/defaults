@@ -1,0 +1,22 @@
+name: AZLint
+
+permissions: read-all
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  azlint:
+    name: AZLint
+    runs-on: ubuntu-latest
+    container: matejkosiarcik/azlint:0.4.5
+    steps:
+      - name: Debug
+        run: |
+          echo "branch: $GITHUB_REF_NAME"
+      - name: Run AZLint
+        run: |
+          azlint
