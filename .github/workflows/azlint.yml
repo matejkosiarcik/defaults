@@ -24,9 +24,4 @@ jobs:
           echo "ref: $GITHUB_REF_NAME"
 
       - name: Run AZLint
-        if: github.ref == 'refs/heads/main'
         run: azlint
-
-      - name: Run AZLint
-        if: github.ref != 'refs/heads/main'
-        run: azlint --only-changed
