@@ -14,6 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     container: ubuntu:22.04
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3.5.2
+        with:
+          fetch-depth: 0 # Full git history is needed to get a proper list of changed files
+
       - name: Debug
         run: |
           echo "branch: $GITHUB_REF_NAME"
