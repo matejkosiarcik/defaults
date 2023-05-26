@@ -12,11 +12,18 @@ jobs:
   azlint:
     name: AZLint
     runs-on: ubuntu-latest
-    container: matejkosiarcik/azlint:0.4.5
+    container: ubuntu:22.04
     steps:
       - name: Debug
         run: |
           echo "branch: $GITHUB_REF_NAME"
-      - name: Run AZLint
+      - name: Debug2
         run: |
-          azlint
+          pwd
+          echo
+          ls -lah
+          echo
+          find .
+      # - name: Run AZLint
+      #   run: |
+      #     azlint
