@@ -19,5 +19,14 @@ jobs:
         with:
           fetch-depth: 0 # Full git history is needed to get a proper list of changed files
 
+      - name: Debug
+        run: |
+          echo "ref: $GITHUB_REF_NAME"
+
       - name: Run AZLint
+        if: github.ref == 'refs/heads/main'
         run: azlint
+
+      - name: Run AZLint
+        if: github.ref != 'refs/heads/main'
+        run: azlint --only-changed
